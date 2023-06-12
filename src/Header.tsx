@@ -33,7 +33,7 @@ const Header: React.FC = () => {
      <button className="subnavbtn" onMouseOver={handleSubNavBtnMouseOver}>About<i className="fa fa-caret-down"></i></button>
        <div className="subnav-content">
         <div className="subnav-trapezoid">
-          <a href="#Services">Home</a>
+          <a href="/">Home</a>
          </div>
        </div>
       </div>
@@ -42,9 +42,9 @@ const Header: React.FC = () => {
      <button className="subnavbtn" onMouseOver={handleSubNavBtnMouseOver}>Clients<i className="fa fa-caret-down"></i></button>
        <div className="subnav-content">
         <div id="subnav-trapezoid">
-          <a href="#Clients">Burger King</a>
-          <a href="#Clients">Southwest Airlines</a>
-          <a href="#Clients">Levi Strauss</a>
+          <a href="#Clients">students</a>
+          <a href="#Clients">organizations</a>
+          <a href="#Clients">...</a>
         </div>
        </div>
     </div>
@@ -60,8 +60,8 @@ const Header: React.FC = () => {
      <button className="subnavbtn" onMouseOver={handleSubNavBtnMouseOver}>Services<i className="fa fa-caret-down"></i></button>
        <div className="subnav-content">
         <div className="subnav-trapezoid">
-          <a href="#Services">Print Design</a>
-          <a href="#Services">Web Design</a>
+          <a href="#Services">web dev</a>
+          <a href="#Services">AI</a>
           <a href="#Services">Mobile App Development</a>
          </div>
        </div>

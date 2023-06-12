@@ -3,6 +3,7 @@ import React, { useState, ReactNode, CSSProperties } from 'react';
 import ReactDOM from 'react-dom';
 import { TiChevronLeftOutline, TiChevronRightOutline } from 'react-icons/ti';
 import Typewriter from 'typewriter-effect';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -103,17 +104,53 @@ const MainContent: React.FC = () => (
     <section id="About">
   <h1>About</h1>
   <hr/> 
-  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+  <p>At NextGen, we firmly grasp the truth that coding is more than just a necessary skill in today's swiftly evolving digital environment; it's the foundation for the innovation that propels us forward. With the rapid rate at which technology is advancing, the knowledge and proficiency in programming have become the bedrock for pioneering digital solutions, fostering creativity, and driving societal growth.
+<br/>
+<br/>
+However, we recognize that the traditional ways of learning coding often fall short in terms of their effectiveness. Traditional pedagogical methods are frequently a one-size-fits-all, ignoring the individual strengths and weaknesses of the learner. This issue is magnified in the field of programming, where hands-on practice is paramount, and the speed of comprehension can significantly vary among learners. The current methods often fail to offer an environment where learners can practice, experiment, and learn from their mistakes in real-time.
+<br/>
+<br/>
+Additionally, the conventional methods tend to be low on interaction, missing out on the power of collaborative learning and community support. Many learners find themselves isolated, with little to no opportunities for collaboration, peer-to-peer learning, or networking. They are often devoid of the chance to work on shared projects, participate in code reviews, or engage in constructive discussions, thereby missing out on vital aspects of a comprehensive coding education.
+<br/>
+</p>
 </section>
 <section id="Clients">
    <h1>Clients</h1>
-   <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+   <p>
+   At NextGen, we are privileged to serve a diverse portfolio of clients that extends across the spectrum. From ambitious individuals eager to dip their toes in the coding world, to seasoned professionals seeking to refine their skills and stay abreast with the latest in technology. From small businesses looking to upskill their teams, to multinational corporations that aim to lead in the digital age through continuous learning and development.
+<br/>
+<br/>
+Our clients are individuals, diverse in age, profession, and coding proficiency. Some are school students who view coding as a fascinating new language to learn, while others are college students aiming to enhance their employability in a competitive job market. We serve professionals from non-technical backgrounds who view coding as a vital tool for career advancement, and tech professionals who aim to stay at the top of their game. Our services also reach out to those who are embarking on a career shift and see coding as a path to new opportunities.
+<br/>
+<br/>
+Organizations form a vital part of our client base. We offer services to businesses of varying sizes and sectors. Start-ups looking to build a solid technological foundation, small to medium enterprises seeking to digitize their operations, and large corporations aiming to foster a culture of continuous learning - all turn to us for their coding education needs. Educational institutions seeking to complement their curricula with practical, hands-on coding skills also form part of our diverse clientele.
+
+   </p>
   <hr/> 
 </section>
 <section id="Services">
     <h1>Services</h1>
-   <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+   <p>
+   At NextGen, we have meticulously developed a comprehensive online learning platform that revolutionizes the way you approach coding. This platform is the result of countless hours of research, innovation, and refinement, all geared towards one goal: to make your coding journey smoother, more enjoyable, and above all, more efficient.
+<br/>
+<br/>
+Our platform is a unique blend of technological sophistication and intuitive design, ensuring that learning coding becomes an immersive and interactive experience rather than a monotonous task. The content is structured in a step-by-step manner, allowing learners to build upon their skills progressively. From the basics of coding to complex concepts, each topic is broken down into digestible modules that allow for flexibility and personalized learning.
+<br/>
+<br/>
+A key feature of our platform is its adaptability. We understand that each learner has a different pace and style of learning, and our platform reflects this understanding. The adaptive nature of the platform allows you to learn at your own pace, thereby reducing the pressure often associated with traditional learning methods.
+<br/>
+<br/>
+Additionally, our platform is packed with a multitude of hands-on exercises, real-world projects, and interactive quizzes to provide practical experience and reinforce the concepts learned. We firmly believe in the power of 'learning by doing', and our platform is designed to encourage active learning.
+
+
+</p>
     <hr/> 
+</section>
+<section>
+  <div className="text-center">
+<a className='custom-btn btn-9' href="/Quiz" role="button"  style={{textDecoration: "none", width:"300px" , height:"60px" , fontSize:"2em"}} ><span>Start Now</span></a>
+</div>
+
 </section>
   </div>
 );

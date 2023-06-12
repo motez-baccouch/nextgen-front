@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import LandingPage from './LandingPage';
+import Quiz from './Quiz';
 
 const App: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const App: React.FC = () => {
       <Header />
       <Routes>
       <Route path="/" element={<LandingPage/>}  />
-      dùlkfjqmkdljfhlqskjdhgfslufghlskjhfglksujghfglksjghfglisuhfglmiksujhfglskjhfglskjhfglskjhfgsldkjfhg
+      <Route path='/quiz' element={<Quiz/>} />
       </Routes>
       <Footer />
     </Router>

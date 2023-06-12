@@ -4,6 +4,7 @@ $color-gray: #9CA3AF;
 $color-black: #1F2937;
 body {
     min-width: 800px;
+    
     background: #ff00cc;  /* fallback for old browsers */
     background-image: linear-gradient(90deg, $color-purple, $color-pink);
     font-family: 'Montserrat', sans-serif;
