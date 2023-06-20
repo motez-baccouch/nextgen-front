@@ -26,10 +26,10 @@ const Timer: React.FC = () => {
   return (
     <div>
       
-        <h1>{seconds}s</h1>
+        
         <div className="text-center">
       
-      <button className="custom-btn btn-12" onClick={handleSubmit}><span>stop</span><span>time</span></button>
+      <button className="custom-btn btn-12" onClick={handleSubmit}><span>reading</span><span>finished</span></button>
     </div>
     </div>
   );

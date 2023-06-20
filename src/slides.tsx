@@ -131,9 +131,9 @@ const Slideshow: React.FC = () => {
             <li>Project</li>
           </ul>
         </div>
-        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' ,  border: '1px solid lightgray', borderRadius: '5px', padding: '20px', textAlign: 'center' , color: "#75707f"}}>
             
-            <h2 style={{ color: 'white' }}>read this patiently and thoroughly(stp the timùer when you have finished reading):</h2>
+            <h2 style={{ color: 'white' }}>read this patiently and thoroughly(stp the button when you have finished reading):</h2>
             <h2>Life, dear reader, is an absolutely absurd, enchanting rollercoaster of an experience, filled with equally absurd characters that we are, for some reason, obliged to love. It's like a never-ending sitcom, where we play all roles, from the tragically comedic janitor to the charismatic lead.
 
               Life can be as unpredictable as a cat on a hot tin roof or as predictable as your grandma's insistence that her 'secret' cookie recipe is a classified family heirloom. One moment you're chomping down on your favorite donut, and the next, you're desperately trying to remember if you turned off the stove or not. Ah, the sweet, sometimes scary, spice of unpredictability.
@@ -183,14 +183,14 @@ const Slideshow: React.FC = () => {
 
 <h2 style={{color:'white'}}>1. Variables</h2>
 
-Variables are like containers that hold values. In JavaScript, you declare a variable using the `var`, `let`, or `const` keyword.
+<p style={{color:"#75707f;"}}>Variables are like containers that hold values. In JavaScript, you declare a variable using the `var`, `let`, or `const` keyword.</p>
 <Editor lines={2} value="let name = 'Alice';
 const age = 25;" onChange={setCode} />
 <br/>
 
 <h2 style={{color:'white'}}>2. Data Types</h2>
 
-JavaScript has several data types including Number, String, Boolean, Object, and others.
+<p style={{color:"#75707f;"}}>JavaScript has several data types including Number, String, Boolean, Object, and others.</p>
 
 <Editor lines={3} value="let number = 10; // Number
 let text = 'Hello, world!'; // String
@@ -199,7 +199,7 @@ let isAlive = true; // Boolean" onChange={setCode} />
 <br/>
 <h2 style={{color:'white'}}>3. Arrays</h2>
 
-Arrays in JavaScript are a type of object used for storing multiple values in a single variable.
+<p style={{color:"#75707f;"}}>Arrays in JavaScript are a type of object used for storing multiple values in a single variable.</p>
 
 <Editor lines={2} value="let fruits = ['Apple', 'Banana', 'Cherry'];" onChange={setCode} />
 
@@ -207,14 +207,14 @@ Arrays in JavaScript are a type of object used for storing multiple values in a 
 
 <h2 style={{color:'white'}}>4. Operators</h2>
 
-JavaScript uses arithmetic and logical operators:
+<p style={{color:"#75707f;"}}>JavaScript uses arithmetic and logical operators:
 
 Arithmetic operators: `+ - * / % ++ --`
-Logical operators: `&& || !`
+Logical operators: `&& || !`</p>
 
 <h2 style={{color:'white'}}>5. Conditional Statements</h2>
 
-If-else, switch are conditional statements that perform different actions based on different conditions.
+<p style={{color:"#75707f;"}}>If-else, switch are conditional statements that perform different actions based on different conditions.</p>
 
 <Editor lines={5} value="if (age > 18) {
     console.log('You are an adult!');
@@ -225,7 +225,7 @@ If-else, switch are conditional statements that perform different actions based 
 <br/>
 <h2 style={{color:'white'}}>6. Loops</h2>
 
-Loops are used to repeatedly run a block of code until a certain condition is met.
+<p style={{color:"#75707f;"}}>Loops are used to repeatedly run a block of code until a certain condition is met.</p>
 
 <Editor lines={2} value="for(let i=0; i<10; i++) {
     console.log(i);}" onChange={setCode} />
@@ -233,7 +233,7 @@ Loops are used to repeatedly run a block of code until a certain condition is me
 <br/>
 <h2 style={{color:'white'}}>7. Functions</h2>
 
-Functions are a block of code designed to perform a particular task.
+<p style={{color:"#75707f;"}}>Functions are a block of code designed to perform a particular task.</p>
 
 <Editor lines={4} value="function greet(name) {
     return 'Hello, ' + name;
@@ -258,11 +258,11 @@ console.log(greet('Alice'));" onChange={setCode} />
         </div>
         <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', fontSize: "2em" }}>
             <h2 style={{ color: "white" }}>Exercise: </h2>
-            Now that you know the basics, let's apply them to a programming exercise.
+            <p style={{color:"#75707f;"}}>Now that you know the basics, let's apply them to a programming exercise.</p>
             <h2 style={{ color: "white" }}>Task: </h2>
-            Write a JavaScript function that accepts a string as input and reverse the string.
+            <p style={{color:"#75707f;"}}>Write a JavaScript function that accepts a string as input and reverse the string.</p>
             <h2 style={{ color: "white" }}>Hint: </h2>
-            You can use string and array methods like split, reverse, and join.
+            <p style={{color:"#75707f;"}}>You can use string and array methods like split, reverse, and join.</p>
             <h2 style={{ color: "white" }}>Good luck and happy coding!</h2>
             <EditorFree value={code1} onChange={handleCodeChange1} />
           </div></>

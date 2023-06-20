@@ -2,11 +2,13 @@ $color-purple: #8B5CF6;
 $color-pink: #EC4899;
 $color-gray: #9CA3AF;
 $color-black: #1F2937;
+$color-darkPurple: #150f25;
+$color-darkPink: #310328;
 body {
     min-width: 800px;
     
     background: #ff00cc;  /* fallback for old browsers */
-    background-image: linear-gradient(90deg, $color-purple, $color-pink);
+    background-image: linear-gradient(90deg, $color-darkPurple, $color-darkPink);
     font-family: 'Montserrat', sans-serif;
   
     margin:0px;
