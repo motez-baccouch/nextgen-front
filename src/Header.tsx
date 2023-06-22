@@ -1,7 +1,7 @@
 import React , { useState } from 'react';
 import './Header.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './assets/nextgenLogo.png'
+import logo from './assets/nextgenLogoWhite.png'
 
 const Header: React.FC = () => {
 
