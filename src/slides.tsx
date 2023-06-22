@@ -13,10 +13,12 @@ const Slideshow: React.FC = () => {
   
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   };
 
   const handlePrevious = () => {
     setCurrentStep(currentStep - 1);
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -198,7 +200,7 @@ So, the GCD of 48 and 18 is 6.
         </ul>
       </div>
         <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' , fontSize:"2em"}}>
-        <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-hq-png-1.png"  style={{ width: '300px', height:'300px' ,margin: 'auto' , display:"block"}} />
+        <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-hq-png-1.png"  style={{ width: '300px', height:'300px' ,margin: 'auto' , display:"block" ,transform:'scaleX(1)', rotate: '0deg' }} />
         
         <h2 style={{color:'white'}}> let's dive into the basics of JavaScript.</h2>
         
