@@ -3,7 +3,6 @@ import './slides.scss';
 import './progressBar.scss';
 import SurveyForm from './quizQuest';
 import {Editor , EditorFree} from './Editor';
-import Timer from './Timer';
 import jsPDF from 'jspdf';
 
 
@@ -183,6 +182,15 @@ Let's say you have two numbers: 48 and 18.
 </ul>
 So, the GCD of 48 and 18 is 6.
 </h3>
+<br/>
+<form>
+  <div className="form-group">
+    <input  className="form-control" id="Question1"  placeholder="can you please describe what the task is exactly:"  style={{ backgroundColor: 'transparent', color: 'white' }} />
+    
+  </div>
+</form>
+<br/>
+
             
             <EditorFree value={code} onChange={handleCodeChange} />
           </div></>

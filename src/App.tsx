@@ -4,6 +4,9 @@ import Header from './Header';
 import Footer from './Footer';
 import LandingPage from './LandingPage';
 import Quiz from './Quiz';
+import Courses from './Courses';
+import Spread from './Spread';
+
 
 const App: React.FC = () => {
   return (
@@ -12,6 +15,8 @@ const App: React.FC = () => {
       <Routes>
       <Route path="/" element={<LandingPage/>}  />
       <Route path='/quiz' element={<Quiz/>} />
+      <Route path='/courses' element={<Courses/>} />
+      <Route path='/courses/courseSpread' element={<Spread/>} />
       </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,39 @@
+.course-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .course-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .course-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+  
+  .course-section-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  .course-section-content li {
+    margin: 0.5rem 0;
+  }
+  
+  ul.course-section-content {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+  }
+  
