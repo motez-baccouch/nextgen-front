@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Spread.scss';
-import { Editor } from './Editor';
+import { Editor, EditorFree } from './Editor';
 
 
 
@@ -51,8 +51,21 @@ const Spread: React.FC = () => {
      console.log(bookDetail);  // Output: {title: "Moby Dick", genre: "Fiction", name: "Herman Melville", nationality: "American"}
      
      `
-    
-    const [code, setCode] = useState("");
+     const exampleExercice = `
+     const breakfast = ["eggs", "toast", "coffee", "orange juice"];
+const lunch = ["burger", "fries", "salad", "coffee"];
+const dinner = ["steak", "potatoes", "wine", "salad"];
+
+console.log(fullMenu(breakfast, lunch, dinner));
+// should return ["burger", "coffee", "eggs", "fries", "orange juice", "potatoes", "salad", "steak", "toast", "wine"]
+
+   `;
+
+
+    const [code, setCode] = useState(`function fullMenu(breakfast, lunch, dinner) {
+      // your code here
+    }
+    `);
    
     
     
@@ -116,6 +129,18 @@ What would happen if you passed something other than an array or an object to th
      
       <Editor value={examplePart5} lines={15} onChange={handleCodeChange} />
       <p className="course-section-content"> By knowing how to create these functionalities from scratch, you should now have a better understanding of how the spread operator works.</p>
+   
+      <h2>Exercise:</h2>
+
+      <p className="course-section-content">Consider a scenario where you have several restaurant menus represented as arrays. Each menu is a list of items available at a specific meal (breakfast, lunch, or dinner).
+
+Your task is to write a function fullMenu that takes in 3 parameters, each an array representing a meal menu: breakfast, lunch, and dinner. The function should return a new array containing all items from all menus, sorted in alphabetical order, and without duplicates.
+
+You should use the spread operator in this exercise.</p>
+<h2>Example</h2>
+<Editor value={exampleExercice} lines={7} onChange={handleCodeChange} />
+<p className="course-section-content">Here's the skeleton of the function to get you started:</p> 
+<EditorFree value={code} onChange={handleCodeChange} />
     </div>
   );
 }

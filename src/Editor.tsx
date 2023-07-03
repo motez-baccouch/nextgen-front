@@ -38,19 +38,50 @@ const EditorFree: React.FC<EditorPropsFree> = ({value,onChange}) => {
  
   
 
-  
+  const [output, setOutput] = useState<string[]>([]);
+  useEffect(() => {
+    const originalLog = console.log;
+    console.log = (...args) => {
+      const logs = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg.toString());
+      setOutput(oldLogs => [...oldLogs, ...logs]);
+      originalLog(...args);
+    };
+    return () => {
+      console.log = originalLog;
+    }
+  }, []); 
+
+  const runCode = () => {
+    setOutput([]); 
+    try {
+      // VERY DANGEROUS, ONLY USE FOR DEMONSTRATION
+      const func = new Function(value);
+      func();
+    } catch (e) {
+      console.error(e);
+    }
+  };
  
   return(
+    <div>
   <AceEditor
     setOptions={{ useWorker: false }}
     mode="javascript"
     theme="monokai"
-    width="800px"
+    width="900px"
+    fontSize="1em"
     onChange={onChange}
     value={value}
     name="UNIQUE_ID_OF_DIV"
     editorProps={{ $blockScrolling: true }}
   />
+  <button onClick={runCode}>Run Code</button>
+      <h2> Output:
+      {output.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+      </h2>
+      </div>
 )};
 
 export {Editor , EditorFree}; 
