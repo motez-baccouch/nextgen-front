@@ -1,38 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import './QuizQuest.scss'
+import { useEffect, useState } from 'react';
 
-const Timer: React.FC = () => {
-  const [seconds, setSeconds] = useState(0);
-  const [isActive, setIsActive] = useState(true);
+interface TimerProps {
+    initialTime: number;
+    onTimeUp: () => void;
+    onReset: () => void;
+}
 
-  useEffect(() => {
-    let interval: NodeJS.Timeout | null = null;
-    if (isActive) {
-      interval = setInterval(() => {
-        setSeconds((seconds) => seconds + 1);
-      }, 1000);
-    } else if (!isActive && seconds !== 0) {
-      clearInterval(interval!);
-    }
-    return () => clearInterval(interval!);
-  }, [isActive, seconds]);
+const Timer: React.FC<TimerProps> = ({ initialTime, onTimeUp, onReset }) => {
+    const [seconds, setSeconds] = useState(initialTime);
 
-  const handleSubmit = () => {
-    setIsActive(false);
-    localStorage.setItem('time', JSON.stringify(seconds));
-    console.log(`Time saved in local storage: ${seconds} seconds`);
-  };
+    useEffect(() => {
+        let interval: NodeJS.Timeout | null = null;
 
-  return (
-    <div>
-      
-        
-        <div className="text-center">
-      
-      <button className="custom-btn btn-12" onClick={handleSubmit}><span>reading</span><span>finished</span></button>
-    </div>
-    </div>
-  );
+        if (seconds > 0) {
+            interval = setInterval(() => {
+                setSeconds(seconds - 1);
+            }, 1000);
+        } else {
+            if (interval !== null) {
+                clearInterval(interval);
+            }
+            onTimeUp();
+            setSeconds(initialTime); // Reset the timer
+            onReset();
+        }
+        return () => {
+            if (interval !== null) {
+                clearInterval(interval);
+            }
+        };
+    }, [seconds, onTimeUp, onReset, initialTime]);
+
+    return (
+        <div>
+            Time left: {seconds}
+        </div>
+    )
 };
 
 export default Timer;
