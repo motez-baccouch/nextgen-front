@@ -4,6 +4,7 @@ import './progressBar.scss';
 import SurveyForm from './quizQuest';
 import {Editor , EditorFree} from './Editor';
 import jsPDF from 'jspdf';
+import Video from './video';
 
 
 
@@ -139,9 +140,7 @@ const Slideshow: React.FC = () => {
             <li>Project</li>
           </ul>
         </div>
-        <div style={{ width: '100%', maxWidth: '560px', margin: '0 auto' }}>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/dsXBgROjSqc" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
-        </div>
+        <Video/>
          </>
       )}
       

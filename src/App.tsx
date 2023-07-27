@@ -7,6 +7,8 @@ import Quiz from './Quiz';
 import Courses from './Courses';
 import Spread from './Spread';
 import BugPuzzle from './bugPuzzle';
+import Triangles from './ThoughtFlow';
+import Reverse from './reverseEngineeing';
 
 
 const App: React.FC = () => {
@@ -20,6 +22,8 @@ const App: React.FC = () => {
       <Route path='/puzzle' element={<BugPuzzle/>} />
       <Route path='/courses' element={<Courses/>} />
       <Route path='/courses/courseSpread' element={<Spread/>} />
+      <Route path='/triangles' element={<Triangles/>} />
+      <Route path='/reverse' element={<Reverse/>} />
       </Routes>
       <Footer />
     </Router>
