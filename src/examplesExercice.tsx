@@ -26,10 +26,7 @@ const Guided: React.FC = () => {
     
      `;
 
-    
-
-     const [code, setCode] = useState("")
-    const [code1, setCode1] = useState(`function colorFinder(colorList, colorToFind) {
+    const exercice = `function colorFinder(colorList, colorToFind) {
         //your colorFinderImplementation
     }
     
@@ -41,7 +38,10 @@ const Guided: React.FC = () => {
     addToColorList(colors, "Yellow"); // Should log "Color added"
     addToColorList(colors, "Blue"); // Should log "Color already exists"
     
-    `);
+    `
+
+     const [code, setCode] = useState("")
+    const [code1, setCode1] = useState(exercice);
    
     
     
@@ -84,7 +84,7 @@ const Guided: React.FC = () => {
     <h2>Here is a simple template for your task:</h2>
    
       
-<EditorFree value={code1} onChange={handleCodeChange1} />
+<Editor valueFix={exercice} value={code1} onChange={handleCodeChange1} lines={0} />
     </div>
   );
 }
