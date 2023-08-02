@@ -54,7 +54,7 @@ const Guided: React.FC = () => {
       };
   return (
     
-        <div className="course-container">
+        <div className="course-container" style={{color: "#75707f"}}>
       <h1 className="course-title">Exercise: "Color Finder"</h1>
       
       <h2 >Suppose you have a list of colors, and your job is to create a function that will accept a color name as input and then return whether or not that color is in the list.</h2>
