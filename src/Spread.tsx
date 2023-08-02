@@ -129,7 +129,8 @@ What would happen if you passed something other than an array or an object to th
      
       <Editor  valueFix={examplePart5} value={examplePart5} lines={15} onChange={handleCodeChange} />
       <p className="course-section-content"> By knowing how to create these functionalities from scratch, you should now have a better understanding of how the spread operator works.</p>
-   
+      <img src='https://i.redd.it/erej5eai49o91.jpg'  style={{width:"800px" , height:"500px" , padding:"10px" , transform:'scaleX(1)', rotate: '0deg' }}/>
+
       <h2>Exercise:</h2>
 
       <p className="course-section-content">Consider a scenario where you have several restaurant menus represented as arrays. Each menu is a list of items available at a specific meal (breakfast, lunch, or dinner).
