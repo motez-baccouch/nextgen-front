@@ -5,10 +5,18 @@ import SurveyForm from './quizQuest';
 import {Editor , EditorFree} from './Editor';
 import jsPDF from 'jspdf';
 import Video from './video';
+import gcd from './assets/gcd.png'
 
 
 
 const Slideshow: React.FC = () => {
+
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        setIsVisible(!isVisible);
+      };
   const [currentStep, setCurrentStep] = useState(0);
   
   const handleNext = () => {
@@ -154,14 +162,21 @@ const Slideshow: React.FC = () => {
             <li>Small Course</li>
             <li>Project</li>
           </ul>
-        </div><div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+        </div>
+        <img src={gcd} style={{ width: '800px', height:'500px' ,margin: 'auto' , display:"block" ,transform:'scaleX(1)', rotate: '0deg' }} />
+
+        <div style={{ width: '100%', maxWidth: '2000x', margin: '0 auto' }}>
             <h2 style={{ color: 'white' }}>Write a simple code that calculate the pgcd of 2 given number(you aer free to use any programming language)</h2>
             <br/>
             <h3 style={{color:"#75707f"}}>
             here is a description of how to calculate the Greatest Common Divisor (GCD) in English using the Euclidean algorithm.
 <br/>
-
-Assume you have two numbers for which you want to find the GCD, let's call them A and B.
+<button onClick={handleClick}>
+        {isVisible ? 'Hide details' : 'example implementation'}
+      </button>
+      {isVisible && (
+        <div>
+          Assume you have two numbers for which you want to find the GCD, let's call them A and B.
 <ul>
 <li>Start by dividing the larger number (A) by the smaller number (B).</li>
 <li>If A is divisible by B, then B is the GCD.</li>
@@ -180,6 +195,10 @@ Let's say you have two numbers: 48 and 18.
 <li>Repeat the process one more time. Divide 12 (A) by 6 (B). Now, A is divisible by B and hence B is the GCD.</li>
 </ul>
 So, the GCD of 48 and 18 is 6.
+        </div>
+        
+      )}
+
 </h3>
 <br/>
 <form>
@@ -215,7 +234,8 @@ So, the GCD of 48 and 18 is 6.
 <h2 style={{color:'white'}}>1. Variables</h2>
 
 <p style={{color:"#75707f;"}}>Variables are like containers that hold values. In JavaScript, you declare a variable using the `var`, `let`, or `const` keyword.</p>
-<Editor lines={2} value="let name = 'Alice';
+<Editor lines={2} valueFix="let name = 'Alice';
+const age = 25;" value="let name = 'Alice';
 const age = 25;" onChange={setCode} />
 <br/>
 
@@ -223,7 +243,10 @@ const age = 25;" onChange={setCode} />
 
 <p style={{color:"#75707f;"}}>JavaScript has several data types including Number, String, Boolean, Object, and others.</p>
 
-<Editor lines={3} value="let number = 10; // Number
+<Editor lines={3} valueFix="let number = 10; // Number
+let text = 'Hello, world!'; // String
+let isAlive = true; // Boolean" 
+value="let number = 10; // Number
 let text = 'Hello, world!'; // String
 let isAlive = true; // Boolean" onChange={setCode} />
 
@@ -232,7 +255,7 @@ let isAlive = true; // Boolean" onChange={setCode} />
 
 <p style={{color:"#75707f;"}}>Arrays in JavaScript are a type of object used for storing multiple values in a single variable.</p>
 
-<Editor lines={2} value="let fruits = ['Apple', 'Banana', 'Cherry'];" onChange={setCode} />
+<Editor lines={2} valueFix="let fruits = ['Apple', 'Banana', 'Cherry'];" value="let fruits = ['Apple', 'Banana', 'Cherry'];" onChange={setCode} />
 
 <br/>
 
@@ -247,7 +270,12 @@ Logical operators: `&& || !`</p>
 
 <p style={{color:"#75707f"}}>If-else, switch are conditional statements that perform different actions based on different conditions.</p>
 
-<Editor lines={5} value="if (age > 18) {
+<Editor lines={5} valueFix="if (age > 18) {
+    console.log('You are an adult!');
+} else {
+    console.log('You are a minor!');
+}" 
+value="if (age > 18) {
     console.log('You are an adult!');
 } else {
     console.log('You are a minor!');
@@ -258,7 +286,9 @@ Logical operators: `&& || !`</p>
 
 <p style={{color:"#75707f"}}>Loops are used to repeatedly run a block of code until a certain condition is met.</p>
 
-<Editor lines={2} value="for(let i=0; i<10; i++) {
+<Editor lines={2} valueFix="for(let i=0; i<10; i++) {
+    console.log(i);}" 
+value="for(let i=0; i<10; i++) {
     console.log(i);}" onChange={setCode} />
 
 <br/>
@@ -266,7 +296,12 @@ Logical operators: `&& || !`</p>
 
 <p style={{color:"#75707f"}}>Functions are a block of code designed to perform a particular task.</p>
 
-<Editor lines={4} value="function greet(name) {
+<Editor lines={4}
+valueFix="function greet(name) {
+  return 'Hello, ' + name;
+}
+console.log(greet('Alice'));" 
+value="function greet(name) {
     return 'Hello, ' + name;
 }
 console.log(greet('Alice'));" onChange={setCode} />
@@ -298,7 +333,23 @@ console.log(greet('Alice'));" onChange={setCode} />
             <EditorFree value={code1} onChange={handleCodeChange1} />
             <h2 style={{ color: "white" }}>Exercise:The Mysterious Array </h2>
             <p style={{color:"#75707f"}}>Consider the following JavaScript code:</p>
-            <Editor lines={10} value="function processArray(numbers) {
+            <Editor lines={10} valueFix="function processArray(numbers) {
+    for(let i = 0; i < numbers.length; i++) {
+        if(numbers[i] % 2 === 0) {
+            numbers[i] *= 2;
+        } else {
+            numbers[i] *= 3;
+        }
+    }
+    return numbers;
+}
+
+let myNumbers = [1, 2, 3, 4, 5];
+console.log('Before processing: ' + myNumbers);
+console.log('After processing: ' + processArray(myNumbers));
+console.log('Original array: ' + myNumbers);
+"
+            value="function processArray(numbers) {
     for(let i = 0; i < numbers.length; i++) {
         if(numbers[i] % 2 === 0) {
             numbers[i] *= 2;

@@ -9,6 +9,8 @@ import Spread from './Spread';
 import BugPuzzle from './bugPuzzle';
 import Triangles from './ThoughtFlow';
 import Reverse from './reverseEngineeing';
+import Primes from './primes';
+import Guided from './examplesExercice';
 
 
 const App: React.FC = () => {
@@ -24,6 +26,8 @@ const App: React.FC = () => {
       <Route path='/courses/courseSpread' element={<Spread/>} />
       <Route path='/triangles' element={<Triangles/>} />
       <Route path='/reverse' element={<Reverse/>} />
+      <Route path='/prime' element={<Primes/>} />
+      <Route path='/guided' element={<Guided/>} />
       </Routes>
       <Footer />
     </Router>

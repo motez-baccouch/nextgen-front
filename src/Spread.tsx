@@ -111,9 +111,9 @@ Object.values(): Returns an array of a given object's own enumerable property va
       <h2 className="course-section-title">Part 3: Developing a Function to Expand Arrays and Objects</h2>
       <p className="course-section-content">Imagine a situation where we need to merge two arrays or two objects. We want to create a function that can accept multiple arrays or objects and merge them.  Let's call this function expand.</p>
       <p>Expanding Arrays:</p>
-      <Editor value={examplePart31} lines={15} onChange={handleCodeChange} />
+      <Editor  valueFix={examplePart31} value={examplePart31} lines={15} onChange={handleCodeChange} />
       <p>Expanding Objects:</p>
-      <Editor value={examplePart32} lines={15} onChange={handleCodeChange} />
+      <Editor  valueFix={examplePart32}value={examplePart32} lines={15} onChange={handleCodeChange} />
       <h2 className="course-section-title">Part 4: Practical Exercise</h2>
       <p className="course-section-content">Now, let's put our expandArrays and expandObjects functions to use. Create two arrays, one containing the names of fruits and the other containing the names of vegetables.  Use the expandArrays function to merge these arrays into one.
 
@@ -127,7 +127,7 @@ What would happen if you passed something other than an array or an object to th
       <h2 className="course-section-title">Spoiler Alert: The Spread Operator</h2>
       <p className="course-section-content">Welcome back! Ready for the big reveal? The functionality we replicated with our expandArrays and expandObjects functions can be achieved more succinctly with the JavaScript Spread Operator(...). Let's see how we would have done the previous exercises using this operator:</p>
      
-      <Editor value={examplePart5} lines={15} onChange={handleCodeChange} />
+      <Editor  valueFix={examplePart5} value={examplePart5} lines={15} onChange={handleCodeChange} />
       <p className="course-section-content"> By knowing how to create these functionalities from scratch, you should now have a better understanding of how the spread operator works.</p>
    
       <h2>Exercise:</h2>
@@ -138,7 +138,7 @@ Your task is to write a function fullMenu that takes in 3 parameters, each an ar
 
 You should use the spread operator in this exercise.</p>
 <h2>Example</h2>
-<Editor value={exampleExercice} lines={7} onChange={handleCodeChange} />
+<Editor valueFix={exampleExercice} value={exampleExercice} lines={7} onChange={handleCodeChange} />
 <p className="course-section-content">Here's the skeleton of the function to get you started:</p> 
 <EditorFree value={code} onChange={handleCodeChange} />
     </div>

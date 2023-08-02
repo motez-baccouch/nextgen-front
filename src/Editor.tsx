@@ -6,6 +6,7 @@ import "ace-builds/src-noconflict/theme-monokai";
 
 interface EditorProps {
   value: string;
+  valueFix: string;
   lines: number;
   onChange: (value: string) => void;
 }
@@ -17,13 +18,46 @@ interface EditorPropsFree {
 
 
 
-const Editor: React.FC<EditorProps> = ({lines ,value, onChange }) => (
+const Editor: React.FC<EditorProps> = ({lines ,valueFix, value: valueProp, onChange }) => {
+  const [value, setValue] = useState(valueProp);
   
+  const [output, setOutput] = useState<string[]>([]);
+  useEffect(() => {
+    const originalLog = console.log;
+    console.log = (...args) => {
+      const logs = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg.toString());
+      setOutput(oldLogs => [...oldLogs, ...logs]);
+      originalLog(...args);
+    };
+    return () => {
+      console.log = originalLog;
+    }
+  }, []); 
+
+  const runCode = () => {
+    setOutput([]); 
+    try {
+      // VERY DANGEROUS, ONLY USE FOR DEMONSTRATION
+      const func = new Function(value);
+      func();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const reload = () => {
+    const newValue = valueFix;
+    setValue(newValue);
+    onChange(newValue);
+  };
+
+  return(
+  <div>
   <AceEditor
     setOptions={{ useWorker: false }}
     mode="javascript"
     theme="monokai"
-    onChange={onChange}
+    onChange={(newValue) => {setValue(newValue); onChange(newValue);}}
     value={value}
     maxLines={lines}
     name="UNIQUE_ID_OF_DIV"
@@ -31,7 +65,15 @@ const Editor: React.FC<EditorProps> = ({lines ,value, onChange }) => (
     width="900px"
     editorProps={{ $blockScrolling: true }}
   />
-);
+<button onClick={runCode}>Run Code</button>
+<button onClick={reload}>Reload</button>
+      <h2> Output:
+      {output.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+      </h2>
+      </div>
+)};
 
 const EditorFree: React.FC<EditorPropsFree> = ({value,onChange}) => {
   
